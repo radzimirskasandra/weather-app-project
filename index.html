@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/96c99fdfba.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="weather-app">
+        <div class="row">
+          <div class="col-2">
+            <h4 id="date-time">Sunday 23:50</h4>
+          </div>
+          
+            <div class="col-6">
+              <form id="search-form">
+              <input
+                type="search"
+                class="form-control"
+                placeholder="Type a city"
+                aria-label="Type a city"
+                autocomplete="off"
+                autofocus="on"
+                id="search-city-input"
+              />
+            </div>
+            <div class="col-2">
+              <input
+                type="submit"
+                value="Search"
+                class="btn btn-primary shadow-sm"
+              /> </div>
+              <div class="col-2">
+                <button id="button" type="button" class="btn btn-success">Current</button>
+
+              </form>
+            </div>
+        </div>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col"></div>
+            <div class="col">
+              <h1 id="current-city">Warsaw</h1>
+              <div class="forecast-icon">
+                <i class="fa-solid fa-cloud"></i>
+              </div>
+              <h2 id="current-temperature">10℃</h2>
+              <h2>cloudy</h2>
+            </div>
+            <div class="col"></div>
+            <div class="precipitation-wind-humidity">
+              <div class="plain-text">Precipitation: 2%</div>
+              <div class="plain-text">Humidity: 84%</div>
+              <div class="plain-text">Wind: 6km/h</div>
+            </div>
+          </div>
+        </div>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col forecast">
+              <div class="forecast-day plain-text">Monday</div>
+              <div class="forecast-icon">
+                <i class="fa-solid fa-cloud"></i>
+              </div>
+              <div class="forecast-temperature plain-text">10℃</div>
+            </div>
+            <div class="col forecast">
+              <div class="forecast-day plain-text">Tuesday</div>
+              <div class="forecast-icon">
+                <i class="fa-solid fa-sun"></i>
+              </div>
+              <div class="forecast-temperature plain-text">15℃</div>
+            </div>
+
+            <div class="col forecast">
+              <div class="forecast-day plain-text">Wednesday</div>
+              <div class="forecast-icon">
+                <i class="fa-solid fa-bolt-lightning"></i>
+              </div>
+              <div class="forecast-temperature plain-text">7℃</div>
+            </div>
+
+            <div class="col forecast">
+              <div class="forecast-day plain-text">Thursday</div>
+              <div class="forecast-icon">
+                <i class="fa-solid fa-cloud-rain"></i>
+              </div>
+              <div class="forecast-temperature plain-text">3℃</div>
+            </div>
+
+            <div class="col forecast">
+              <div class="forecast-day plain-text">Friday</div>
+              <div class="forecast-icon">
+                <i class="fa-solid fa-snowflake"></i>
+              </div>
+              <div class="forecast-temperature plain-text">-2℃</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>

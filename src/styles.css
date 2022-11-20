@@ -1,0 +1,79 @@
+body {
+  padding: 20px 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.weather-app {
+  width: 70%;
+  display: block;
+  margin: 20px auto;
+  padding: 15px;
+  border: #dadde1 solid 1px;
+  border-radius: 6px;
+}
+
+h1 {
+  padding: 40px 0 0 0;
+}
+
+h1,
+h2,
+h4 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+h4 {
+  color: #70758f;
+}
+
+.forecast-icon {
+  font-size: 30px;
+}
+.fa-cloud {
+  color: #e0d5d5;
+}
+.fa-sun {
+  color: #fcd992;
+}
+
+.fa-bolt-lightning {
+  color: #f4ff7f;
+}
+
+.fa-cloud-rain {
+  color: #97a7f4;
+}
+
+.fa-snowflake {
+  color: #a9f9f8;
+}
+
+.plain-text {
+  font-weight: bolder;
+}
+
+.precipitation-wind-humidity {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #70758f;
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.forecast-temperature {
+  color: #70758f;
+}
+
+.forecast {
+  transition: all 20ms ease-in-out;
+}
+
+.forecast:hover {
+  background-color: #f8f9fa;
+}
