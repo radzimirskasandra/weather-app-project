@@ -35,16 +35,11 @@ function getWeather(response) {
   temperatureElement.innerHTML = `${temperature}℃`;
 }
 
-function getCity(city) {
-  let currentCity = document.querySelector("#search-city-input").value;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=38146ecc463f344c9fc5c923d091b549&units=metric`;
-  axios.get(apiUrl).then(getWeather);
-}
-
 function searchCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-city-input").value;
-  getCity(searchInput);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&appid=38146ecc463f344c9fc5c923d091b549&units=metric`;
+  axios.get(apiUrl).then(getWeather);
 }
 
 let form = document.querySelector("#search-form");
