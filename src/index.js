@@ -57,7 +57,7 @@ function currentLocationCity(response) {
 function getLongLat(position) {
   let lat = position.coords.latitude;
   let long = position.coords.longitude;
-  let apiUrl = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${long}&appid=ca5af28648d86b7925348bb9fb85cd3a&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${long}&appid=ca5af28648d86b7925348bb9fb85cd3a&units=metric`;
   axios.get(apiUrl).then(currentLocationCity);
 }
 
