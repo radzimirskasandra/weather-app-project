@@ -77,3 +77,7 @@ h4 {
 .forecast:hover {
   background-color: #f8f9fa;
 }
+
+footer {
+  text-align: center;
+}
