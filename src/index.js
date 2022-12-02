@@ -27,24 +27,49 @@ h4.innerHTML = displayCurrentDate(new Date());
 
 //Search Engine
 function getWeather(response) {
+  console.log(response.data);
   let currentCity = document.querySelector("#current-city");
   currentCity.innerHTML = response.data.name;
-  console.log(response);
   let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#current-temperature");
   temperatureElement.innerHTML = `${temperature}℃`;
+  let currentHumidity = document.querySelector("#humidity");
+  currentHumidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
+  let currentWindSpeed = document.querySelector("#wind");
+  currentWindSpeed.innerHTML = `Wind: ${Math.round(
+    response.data.wind.speed
+  )} km/h`;
+  let currentWeatherDescription = document.querySelector(
+    "#weather-description"
+  );
+  currentWeatherDescription.innerHTML = response.data.weather[0].main;
+
+  let currentIcon = document.querySelector("#weather-icon");
+  let currentWeatherIcon = response.data.weather[0].icon;
+  currentIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${currentWeatherIcon}@2x.png`
+  );
+}
+
+//Current city on load
+function loadCity(searchInput) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&appid=38146ecc463f344c9fc5c923d091b549&units=metric`;
+  axios.get(apiUrl).then(getWeather);
 }
 
 function searchCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-city-input").value;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&appid=38146ecc463f344c9fc5c923d091b549&units=metric`;
-  axios.get(apiUrl).then(getWeather);
+  loadCity(searchInput);
+  let h4 = document.querySelector("#date-time");
+  h4.innerHTML = displayCurrentDate(new Date());
 }
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
+loadCity("Warsaw");
 //Current Location button
 
 function currentLocationCity(response) {
@@ -64,6 +89,8 @@ function getLongLat(position) {
 function clickCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(getLongLat);
+  let h4 = document.querySelector("#date-time");
+  h4.innerHTML = displayCurrentDate(new Date());
 }
 
 let button = document.querySelector("#button");
