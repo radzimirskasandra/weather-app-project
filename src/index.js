@@ -30,9 +30,10 @@ function getWeather(response) {
   console.log(response.data);
   let currentCity = document.querySelector("#current-city");
   currentCity.innerHTML = response.data.name;
-  let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  let temperature = Math.round(celsiusTemperature);
   let temperatureElement = document.querySelector("#current-temperature");
-  temperatureElement.innerHTML = `${temperature}℃`;
+  temperatureElement.innerHTML = temperature;
   let currentHumidity = document.querySelector("#humidity");
   currentHumidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   let currentWindSpeed = document.querySelector("#wind");
@@ -69,7 +70,6 @@ function searchCity(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
-loadCity("Warsaw");
 //Current Location button
 
 function currentLocationCity(response) {
@@ -95,3 +95,30 @@ function clickCurrentLocation(event) {
 
 let button = document.querySelector("#button");
 button.addEventListener("click", clickCurrentLocation);
+
+//Unit conversion
+function convertFahrenheit(event) {
+  event.preventDefault();
+  let temperatureFahrenheit = (celsiusTemperature * 9) / 5 + 32;
+  let temperature = document.querySelector("#current-temperature");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  temperature.innerHTML = Math.round(temperatureFahrenheit);
+}
+
+function convertCelsius(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#current-temperature");
+  temperature.innerHTML = Math.round(celsiusTemperature);
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+}
+
+let celsiusTemperature = null;
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertCelsius);
+
+loadCity("Warsaw");

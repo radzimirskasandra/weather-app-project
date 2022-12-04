@@ -81,3 +81,20 @@ h4 {
 footer {
   text-align: center;
 }
+
+.units {
+  font-size: small;
+  position: relative;
+  left: 50px;
+  bottom: 47px;
+}
+
+.active {
+  color: black;
+  cursor: default;
+}
+
+.active:hover {
+  text-decoration: none;
+  color: black;
+}
