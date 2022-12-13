@@ -25,6 +25,25 @@ function displayCurrentDate(date) {
 let h4 = document.querySelector("#date-time");
 h4.innerHTML = displayCurrentDate(new Date());
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col forecast">
+              <div class="forecast-day plain-text">${day}</div>
+              <div class="forecast-icon">
+                <i class="fa-solid fa-cloud"></i>
+              </div>
+              <div class="forecast-temperature plain-text">10℃</div>
+              </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 //Search Engine
 function getWeather(response) {
   console.log(response.data);
@@ -51,6 +70,7 @@ function getWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${currentWeatherIcon}@2x.png`
   );
+  displayForecast();
 }
 
 //Current city on load
