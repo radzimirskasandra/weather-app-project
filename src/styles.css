@@ -12,11 +12,16 @@ a {
   display: block;
   margin: 20px auto;
   padding: 15px;
-  border: #dadde1 solid 1px;
+  border: #bcd6e6 solid 1px;
   border-radius: 6px;
+  background-color: #d1e2ed;
 }
 
 h1 {
+  font-size: 40px;
+  padding: 50px 0 0 0;
+}
+img {
   padding: 40px 0 0 0;
 }
 
@@ -34,24 +39,6 @@ h4 {
 .forecast-icon {
   font-size: 30px;
 }
-.fa-cloud {
-  color: #e0d5d5;
-}
-.fa-sun {
-  color: #fcd992;
-}
-
-.fa-bolt-lightning {
-  color: #f4ff7f;
-}
-
-.fa-cloud-rain {
-  color: #97a7f4;
-}
-
-.fa-snowflake {
-  color: #a9f9f8;
-}
 
 .plain-text {
   font-weight: bolder;
@@ -62,11 +49,14 @@ h4 {
   padding-top: 20px;
   padding-bottom: 20px;
   color: #70758f;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: lighter;
 }
 
 .forecast-temperature {
+  color: black;
+}
+.forecast-temperature-night {
   color: #70758f;
 }
 
@@ -75,7 +65,7 @@ h4 {
 }
 
 .forecast:hover {
-  background-color: #f8f9fa;
+  background-color: #bcd6e6;
 }
 
 footer {
