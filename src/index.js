@@ -113,6 +113,8 @@ function searchCity(event) {
   loadCity(searchInput);
   let h4 = document.querySelector("#date-time");
   h4.innerHTML = displayCurrentDate(new Date());
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
 }
 
 let form = document.querySelector("#search-form");
@@ -139,6 +141,8 @@ function clickCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(getLongLat);
   let h4 = document.querySelector("#date-time");
   h4.innerHTML = displayCurrentDate(new Date());
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
 }
 
 let button = document.querySelector("#button");
